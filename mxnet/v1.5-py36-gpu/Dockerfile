@@ -1,9 +1,9 @@
 FROM cargo.caicloud.xyz/devops_release/miniconda:v4.7.12.1-py36-gpu
 
 # Install mxnet
-ARG MXNET_VERSION=1.5.1
+ARG MXNET_VERSION=1.5.0
 ARG MXNET_TYPE=mxnet-cu100
-RUN pip install --no-cache-dir ${MXNET_TYPE}==${MXNET_VERSION}
+RUN pip install --no-cache-dir ${MXNET_TYPE}==${MXNET_VERSION} onnx
 
 ## Install horovod with mxnet
 ARG HOROVOD_VERSION=0.19.0
